@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { ChevronRight, ChevronLeft } from 'lucide-react'
+import MermaidDiagram from './MermaidDiagram'
+import { diagrams } from './diagramData'
 
 const Presentation = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -16,86 +18,86 @@ const Presentation = () => {
     },
     {
       title: 'AI 代理人系統',
-      content: [
-        { label: '專業化分工', text: '每個代理人專精特定領域' },
-        { label: '協作機制', text: '代理人之間可互相委派任務' },
-        { label: '實際案例', text: 'Kevin (開發)、Molly (QA)、路由代理人' },
-        { label: '自訂配置', text: '支援提示詞、工具、變數管理' }
+      type: 'diagram',
+      description: '專業化分工的 AI 代理人網路，支援協作與自訂配置',
+      diagram: diagrams.agentNetwork,
+      highlights: [
+        '每個代理人專精特定領域',
+        '代理人之間可互相委派任務',
+        '實例：Kevin (開發)、Molly (QA)、路由代理人',
+        '支援提示詞、工具、變數管理'
       ]
     },
     {
       title: '整體架構',
-      sections: [
-        { title: '前端介面層', items: ['Web UI', 'Telegram', 'API'] },
-        { title: 'AI 編排層', items: ['LLM 基礎', 'Function Calling'] },
-        { title: '工具執行層', items: ['沙箱環境', 'API 代理', 'OAuth'] },
-        { title: '資料儲存層', items: ['檔案管理', '記憶系統', '配置'] },
-        { title: '外部整合層', items: ['130+ 應用連接'] }
+      type: 'diagram',
+      description: 'Nebula 採用分層架構設計，從介面到整合層層協作',
+      diagram: diagrams.architecture,
+      highlights: [
+        '🖥️ 前端介面層：Web UI、Telegram、Slack、API',
+        '🤖 AI 編排層：LLM 基礎、Function Calling',
+        '⚙️ 工具執行層：Python 沙箱、OAuth、Web 瀏覽',
+        '💾 資料儲存層：檔案、記憶、配置管理',
+        '🔌 外部整合層：130+ 應用連接'
       ]
     },
     {
       title: '自動化能力',
-      content: [
-        { label: '任務配方', text: '可重用的工作流模板' },
-        { label: '觸發器', text: 'Cron 排程 & 即時事件觸發' },
-        { label: '腳本管理', text: 'Python 自動化腳本庫' },
-        { label: '工作流編排', text: '智能序列/平行執行' },
-        { label: '實例', text: '每日通勤資訊、定期報告生成' }
+      type: 'diagram',
+      description: '從觸發到執行的完整自動化工作流程',
+      diagram: diagrams.automationWorkflow,
+      highlights: [
+        '⏰ 多種觸發方式：Cron 排程、即時事件',
+        '📋 任務配方：可重用的工作流模板',
+        '🔄 智能重試機制',
+        '💾 完整執行歷史記錄',
+        '實例：每日通勤資訊、定期報告生成'
       ]
     },
     {
       title: '記憶與學習系統',
+      type: 'diagram',
+      description: '多層次記憶系統支援智能學習與優化',
+      diagram: diagrams.memorySystem,
+      highlights: [
+        '💬 對話記憶：跨會話上下文追蹤',
+        '🗄️ 應用記憶：資源 ID 映射快取',
+        '📊 任務歷史：執行成功/失敗追蹤',
+        '📈 效能指標：持續優化',
+        '🔍 全文檢索：快速查找歷史對話'
+      ]
+    },
+    {
+      title: '代理人協作流程',
+      type: 'diagram',
+      description: '從使用者請求到結果回報的完整協作流程',
+      diagram: diagrams.agentCollaboration,
+      highlights: [
+        '🎯 智能路由：自動分析請求意圖',
+        '👨‍💻 專業分工：開發、測試、專業任務',
+        '📦 結果整合：統一回報',
+        '🔄 協作互動：代理人間互相請求',
+        '✅ 品質保證：自動測試與驗證'
+      ]
+    },
+    {
+      title: '核心功能總覽',
       content: [
-        { label: '對話記憶', text: '跨會話上下文追蹤' },
-        { label: '應用記憶', text: '資源 ID 映射快取' },
-        { label: '失敗學習', text: '記錄錯誤避免重複' },
-        { label: '全文搜尋', text: 'PostgreSQL FTS' },
-        { label: '共享知識', text: '頻道範圍記憶' }
+        { label: '網頁互動', text: '自動化瀏覽、表單填寫、資料擷取' },
+        { label: '程式執行', text: 'Python 沙箱、資料分析、API 整合' },
+        { label: '應用整合', text: '130+ OAuth 連接 (GitHub、Google、Slack)' },
+        { label: '檔案處理', text: '文字、圖片、文件的建立與編輯' },
+        { label: '智能搜尋', text: '語義搜尋、網頁爬蟲、資料萃取' }
       ]
     },
     {
-      title: 'Nebula vs OpenClaw',
-      comparison: [
-        { aspect: '開放性', nebula: '商業平台', openclaw: '開源專案' },
-        { aspect: '執行方式', nebula: '雲端沙箱', openclaw: '本地控制' },
-        { aspect: '安全模型', nebula: '隔離環境 ✓', openclaw: '直接存取 ⚠' },
-        { aspect: '整合方式', nebula: 'API 整合', openclaw: '模擬操作' },
-        { aspect: '協作能力', nebula: '多代理網路 ✓', openclaw: '單一助手' }
-      ]
-    },
-    {
-      title: '應用場景',
-      scenarios: [
-        {
-          title: '軟體開發流程',
-          description: 'Kevin 負責開發 → Molly 執行測試 → 自動記錄到專屬頻道',
-          icon: '💻'
-        },
-        {
-          title: '每日通勤資訊',
-          description: '定時查詢台鐵時刻表，標示誤點狀態，推送到 Telegram',
-          icon: '🚆'
-        },
-        {
-          title: 'Telegram 訊息路由',
-          description: '自動分析訊息內容，委派給最合適的專業代理人處理',
-          icon: '📨'
-        },
-        {
-          title: '資料分析自動化',
-          description: '網路爬取 → 資料處理 → 視覺化報告，一條龍完成',
-          icon: '📊'
-        }
-      ]
-    },
-    {
-      title: '未來發展方向',
-      future: [
-        { icon: '🔗', title: '更多原生整合', desc: '擴展應用生態系統' },
-        { icon: '🧠', title: '更強推理能力', desc: '複雜任務規劃' },
-        { icon: '⚡', title: '更智能自動化', desc: '主動式工作流' },
-        { icon: '👥', title: '更豐富協作', desc: '代理人團隊編排' },
-        { icon: '🏢', title: '企業功能', desc: '權限、審計、合規' }
+      title: '實際應用場景',
+      content: [
+        { label: '開發流程', text: '自動 PR 審查、CI/CD 整合、Bug 追蹤' },
+        { label: '資料分析', text: 'CSV 處理、圖表生成、報告撰寫' },
+        { label: '通訊自動化', text: 'Telegram 訊息路由、通知整合' },
+        { label: '定期任務', text: '每日通勤資訊、週報生成' },
+        { label: '研究助手', text: '文獻搜尋、資料整理、摘要生成' }
       ]
     }
   ]
@@ -108,151 +110,111 @@ const Presentation = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
   }
 
-  const renderSlideContent = (slide) => {
-    if (slide.content) {
-      return (
-        <div className="space-y-6">
-          {slide.content.map((item, idx) => (
-            <div key={idx} className="bg-blue-50 rounded-lg p-4">
-              <div className="font-semibold text-blue-900 mb-1">{item.label}</div>
-              <div className="text-gray-700">{item.text}</div>
-            </div>
-          ))}
-        </div>
-      )
-    }
-
-    if (slide.sections) {
-      return (
-        <div className="space-y-4">
-          {slide.sections.map((section, idx) => (
-            <div key={idx} className="border-l-4 border-blue-500 pl-4">
-              <div className="font-bold text-lg text-gray-900 mb-2">{section.title}</div>
-              <div className="text-gray-600">{section.items.join(' • ')}</div>
-            </div>
-          ))}
-        </div>
-      )
-    }
-
-    if (slide.comparison) {
-      return (
-        <div className="overflow-x-auto">
-          <table className="w-full">
-            <thead>
-              <tr className="bg-gray-100">
-                <th className="px-4 py-3 text-left font-semibold">比較項目</th>
-                <th className="px-4 py-3 text-left font-semibold text-blue-600">Nebula</th>
-                <th className="px-4 py-3 text-left font-semibold text-purple-600">OpenClaw</th>
-              </tr>
-            </thead>
-            <tbody>
-              {slide.comparison.map((item, idx) => (
-                <tr key={idx} className="border-b">
-                  <td className="px-4 py-3 font-medium">{item.aspect}</td>
-                  <td className="px-4 py-3 text-blue-700">{item.nebula}</td>
-                  <td className="px-4 py-3 text-purple-700">{item.openclaw}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )
-    }
-
-    if (slide.scenarios) {
-      return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {slide.scenarios.map((scenario, idx) => (
-            <div key={idx} className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-5">
-              <div className="text-3xl mb-3">{scenario.icon}</div>
-              <h4 className="font-bold text-lg mb-2">{scenario.title}</h4>
-              <p className="text-gray-600 text-sm">{scenario.description}</p>
-            </div>
-          ))}
-        </div>
-      )
-    }
-
-    if (slide.future) {
-      return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {slide.future.map((item, idx) => (
-            <div key={idx} className="bg-white border-2 border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors">
-              <div className="text-3xl mb-2">{item.icon}</div>
-              <h4 className="font-bold mb-1">{item.title}</h4>
-              <p className="text-gray-600 text-sm">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      )
-    }
-  }
+  const currentSlideData = slides[currentSlide]
 
   return (
-    <section id="presentation" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section id="presentation" className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              平台介紹
-            </h2>
-            <p className="text-xl text-gray-600">
-              深入了解 Nebula AI 的技術架構與核心優勢
-            </p>
-          </div>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">平台介紹</h2>
+          <p className="text-xl text-gray-600">深入了解 Nebula AI 的核心能力</p>
+        </div>
 
-          {/* Slide Container */}
-          <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
-            {/* Slide Progress */}
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-4 text-white">
-              <div className="flex items-center justify-between">
-                <h3 className="text-2xl font-bold">{slides[currentSlide].title}</h3>
-                <span className="text-sm bg-white/20 px-3 py-1 rounded-full">
-                  {currentSlide + 1} / {slides.length}
-                </span>
-              </div>
-            </div>
+        <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden">
+          {/* 簡報內容 */}
+          <div className="p-12 min-h-[600px]">
+            <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              {currentSlideData.title}
+            </h3>
 
-            {/* Slide Content */}
-            <div className="p-8 min-h-[400px]">
-              {renderSlideContent(slides[currentSlide])}
-            </div>
-
-            {/* Navigation */}
-            <div className="flex items-center justify-between px-6 py-4 bg-gray-50 border-t">
-              <button
-                onClick={prevSlide}
-                className="flex items-center gap-2 px-4 py-2 bg-white border-2 border-gray-300 rounded-lg hover:bg-gray-50 transition-colors disabled:opacity-50"
-                disabled={currentSlide === 0}
-              >
-                <ChevronLeft className="w-5 h-5" />
-                上一頁
-              </button>
-
-              {/* Dot Indicators */}
-              <div className="flex gap-2">
-                {slides.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setCurrentSlide(idx)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      idx === currentSlide ? 'bg-blue-600 w-8' : 'bg-gray-300'
-                    }`}
+            {currentSlideData.type === 'diagram' ? (
+              // 圖表類型簡報
+              <div className="space-y-6">
+                <p className="text-lg text-gray-600 text-center mb-6">
+                  {currentSlideData.description}
+                </p>
+                
+                <div className="bg-gray-50 rounded-xl p-6 mb-6">
+                  <MermaidDiagram 
+                    chart={currentSlideData.diagram} 
+                    className="w-full"
                   />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {currentSlideData.highlights.map((highlight, index) => (
+                    <div 
+                      key={index}
+                      className="flex items-start space-x-3 p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors"
+                    >
+                      <div className="flex-shrink-0 w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                        {index + 1}
+                      </div>
+                      <p className="text-gray-700">{highlight}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              // 文字列表類型簡報
+              <div className="space-y-6">
+                {currentSlideData.content.map((item, index) => (
+                  <div 
+                    key={index} 
+                    className="flex items-start space-x-4 p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl hover:shadow-lg transition-all duration-300"
+                  >
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+                        {index + 1}
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-xl font-semibold text-gray-900 mb-2">{item.label}</h4>
+                      <p className="text-gray-600 text-lg">{item.text}</p>
+                    </div>
+                  </div>
                 ))}
               </div>
+            )}
+          </div>
 
-              <button
-                onClick={nextSlide}
-                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
-                disabled={currentSlide === slides.length - 1}
-              >
-                下一頁
-                <ChevronRight className="w-5 h-5" />
-              </button>
+          {/* 導航控制 */}
+          <div className="bg-gray-100 px-12 py-6 flex items-center justify-between">
+            <button
+              onClick={prevSlide}
+              className="flex items-center space-x-2 px-6 py-3 bg-white rounded-lg hover:bg-gray-50 transition-colors shadow-md"
+            >
+              <ChevronLeft className="w-5 h-5" />
+              <span className="font-medium">上一頁</span>
+            </button>
+
+            <div className="flex items-center space-x-2">
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentSlide 
+                      ? 'bg-blue-600 w-8' 
+                      : 'bg-gray-400 hover:bg-gray-500'
+                  }`}
+                  aria-label={`前往第 ${index + 1} 頁`}
+                />
+              ))}
             </div>
+
+            <button
+              onClick={nextSlide}
+              className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:opacity-90 transition-opacity shadow-md"
+            >
+              <span className="font-medium">下一頁</span>
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+
+          {/* 頁碼指示 */}
+          <div className="bg-gray-50 px-12 py-4 text-center text-gray-600">
+            第 {currentSlide + 1} / {slides.length} 頁
           </div>
         </div>
       </div>
