@@ -99,6 +99,57 @@ const Presentation = () => {
         { label: '定期任務', text: '每日通勤資訊、週報生成' },
         { label: '研究助手', text: '文獻搜尋、資料整理、摘要生成' }
       ]
+    },
+    {
+      title: 'Nebula vs OpenClaw',
+      type: 'comparison',
+      description: '企業級雲端平台 vs 本地自架 AI 助手框架',
+      sections: [
+        {
+          title: '🎯 核心定位',
+          items: [
+            { label: 'Nebula', text: '雲端 AI 代理人網路平台，開箱即用' },
+            { label: 'OpenClaw', text: '本地自架 AI 助手框架，完全掌控' }
+          ]
+        },
+        {
+          title: '✨ 主要優勢',
+          items: [
+            { label: 'Nebula', text: '• 50+ OAuth 原生整合\n• 企業級安全與權限\n• 零維護成本\n• 適合團隊協作' },
+            { label: 'OpenClaw', text: '• 100% 資料隱私（本地運行）\n• 完整系統存取權限\n• 智慧家居整合\n• 開源可客製化' }
+          ]
+        },
+        {
+          title: '💰 成本比較',
+          items: [
+            { label: 'Nebula', text: '訂閱制，成本可預測（含 AI 模型費用）' },
+            { label: 'OpenClaw', text: '免費開源，但需自付 API 費用（$5-50/day）' }
+          ]
+        },
+        {
+          title: '👥 適合對象',
+          items: [
+            { label: 'Nebula', text: '✅ 企業團隊\n✅ 非技術用戶\n✅ 需要穩定雲端服務' },
+            { label: 'OpenClaw', text: '✅ 開發者\n✅ 隱私優先者\n✅ 智慧家居玩家' }
+          ]
+        },
+        {
+          title: '🔒 隱私與安全',
+          items: [
+            { label: 'Nebula', text: '雲端加密儲存，OAuth 授權，低風險' },
+            { label: 'OpenClaw', text: '本地運行，完全掌控，但需自行加固安全' }
+          ]
+        },
+        {
+          title: '💡 Elio 的建議',
+          items: [
+            { label: '企業用戶', text: '選 Nebula → 穩定、合規、易管理' },
+            { label: '開發者', text: '兩個都試 → Nebula 生產 + OpenClaw 實驗' },
+            { label: '隱私狂熱者', text: '選 OpenClaw → 完全掌控資料' },
+            { label: '最佳組合', text: 'Nebula 處理工作 + OpenClaw 處理個人任務' }
+          ]
+        }
+      ]
     }
   ]
 
@@ -154,6 +205,30 @@ const Presentation = () => {
                     </div>
                   ))}
                 </div>
+              </div>
+            ) : currentSlideData.type === 'comparison' ? (
+              // 比較表類型簡報
+              <div className="space-y-8">
+                <p className="text-lg text-gray-600 text-center mb-6">
+                  {currentSlideData.description}
+                </p>
+                
+                {currentSlideData.sections.map((section, sectionIndex) => (
+                  <div key={sectionIndex} className="space-y-4">
+                    <h4 className="text-2xl font-bold text-gray-800 mb-4">{section.title}</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {section.items.map((item, itemIndex) => (
+                        <div 
+                          key={itemIndex}
+                          className="p-4 bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg border-2 border-blue-200 hover:shadow-lg transition-all"
+                        >
+                          <h5 className="text-lg font-semibold text-blue-700 mb-2">{item.label}</h5>
+                          <p className="text-gray-700 whitespace-pre-line">{item.text}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
             ) : (
               // 文字列表類型簡報
