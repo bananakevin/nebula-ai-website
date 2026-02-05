@@ -112,8 +112,7 @@ const Presentation = () => {
         { label: '定期任務', text: '每日通勤資訊、週報生成' },
         { label: '研究助手', text: '文獻搜尋、資料整理、摘要生成' }
       ]
-    }
-
+    },
     {
       title: 'Nebula vs OpenClaw',
       type: 'comparison',
@@ -268,6 +267,38 @@ const Presentation = () => {
                         {index + 1}
                       </div>
                       <p className="text-gray-700">{highlight}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : currentSlideData.type === 'comparison' ? (
+              // 比較類型簡報 (Nebula vs OpenClaw)
+              <div className="space-y-6">
+                <p className="text-lg text-gray-600 text-center mb-6">
+                  {currentSlideData.description}
+                </p>
+                
+                <div className="space-y-6">
+                  {currentSlideData.sections.map((section, sectionIndex) => (
+                    <div key={sectionIndex} className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6">
+                      <h4 className="text-xl font-bold text-gray-900 mb-4">{section.title}</h4>
+                      <div className="space-y-3">
+                        {section.items.map((item, itemIndex) => (
+                          <div 
+                            key={itemIndex}
+                            className="bg-white rounded-lg p-4 hover:shadow-md transition-shadow"
+                          >
+                            <div className="flex items-start space-x-3">
+                              <div className="flex-shrink-0 min-w-[120px]">
+                                <span className="font-semibold text-blue-600">{item.label}</span>
+                              </div>
+                              <div className="flex-1">
+                                <p className="text-gray-700 whitespace-pre-line">{item.text}</p>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   ))}
                 </div>
