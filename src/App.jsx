@@ -6,6 +6,7 @@ import Features from './components/Features'
 import AIModels from './components/AIModels'
 import ApiDocumentation from './components/ApiDocumentation'
 import SecurityPrivacy from './components/SecurityPrivacy'
+import Limitations from './components/Limitations'
 import Footer from './components/Footer'
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
               <a href="#presentation" className="text-gray-700 hover:text-blue-600 transition-colors">平台介紹</a>
               <a href="#how-to-use" className="text-gray-700 hover:text-blue-600 transition-colors">使用說明</a>
               <a href="#api-docs" className="text-gray-700 hover:text-blue-600 transition-colors">API 文件</a>
+              <a href="#limitations" className="text-gray-700 hover:text-blue-600 transition-colors">系統限制</a>
               <a href="#security-privacy" className="text-gray-700 hover:text-blue-600 transition-colors">安全性</a>
             </div>
             <a 
@@ -50,6 +52,7 @@ function App() {
         <Presentation />
         <HowToUse />
         <ApiDocumentation />
+        <Limitations />
         <SecurityPrivacy />
       </main>
 
