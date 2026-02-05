@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import Presentation from './components/Presentation'
 import HowToUse from './components/HowToUse'
 import Features from './components/Features'
+import AIModels from './components/AIModels'
 import Footer from './components/Footer'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
               <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors">首頁</a>
               <a href="#presentation" className="text-gray-700 hover:text-blue-600 transition-colors">平台介紹</a>
               <a href="#features" className="text-gray-700 hover:text-blue-600 transition-colors">核心功能</a>
+              <a href="#ai-models" className="text-gray-700 hover:text-blue-600 transition-colors">AI 模型</a>
               <a href="#how-to-use" className="text-gray-700 hover:text-blue-600 transition-colors">使用說明</a>
             </div>
             <a 
@@ -40,6 +42,7 @@ function App() {
       <main className="pt-16">
         <Hero />
         <Features />
+        <AIModels />
         <Presentation />
         <HowToUse />
       </main>
