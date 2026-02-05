@@ -4,6 +4,7 @@ import Presentation from './components/Presentation'
 import HowToUse from './components/HowToUse'
 import Features from './components/Features'
 import AIModels from './components/AIModels'
+import ApiDocumentation from './components/ApiDocumentation'
 import Footer from './components/Footer'
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
               <a href="#features" className="text-gray-700 hover:text-blue-600 transition-colors">核心功能</a>
               <a href="#presentation" className="text-gray-700 hover:text-blue-600 transition-colors">平台介紹</a>
               <a href="#how-to-use" className="text-gray-700 hover:text-blue-600 transition-colors">使用說明</a>
+              <a href="#api-docs" className="text-gray-700 hover:text-blue-600 transition-colors">API 文件</a>
             </div>
             <a 
               href="https://nebula.gg" 
@@ -45,6 +47,7 @@ function App() {
         <Features />
         <Presentation />
         <HowToUse />
+        <ApiDocumentation />
       </main>
 
       <Footer />
