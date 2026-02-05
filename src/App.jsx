@@ -4,6 +4,7 @@ import Presentation from './components/Presentation'
 import HowToUse from './components/HowToUse'
 import Features from './components/Features'
 import AIModels from './components/AIModels'
+import Architecture from './components/Architecture'
 import ApiDocumentation from './components/ApiDocumentation'
 import SecurityPrivacy from './components/SecurityPrivacy'
 import Footer from './components/Footer'
@@ -25,6 +26,7 @@ function App() {
               <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors">首頁</a>
               <a href="#ai-models" className="text-gray-700 hover:text-blue-600 transition-colors">AI 模型</a>
               <a href="#features" className="text-gray-700 hover:text-blue-600 transition-colors">核心功能</a>
+              <a href="#architecture" className="text-gray-700 hover:text-blue-600 transition-colors">技術架構</a>
               <a href="#presentation" className="text-gray-700 hover:text-blue-600 transition-colors">平台介紹</a>
               <a href="#how-to-use" className="text-gray-700 hover:text-blue-600 transition-colors">使用說明</a>
               <a href="#api-docs" className="text-gray-700 hover:text-blue-600 transition-colors">API 文件</a>
@@ -47,6 +49,7 @@ function App() {
         <Hero />
         <AIModels />
         <Features />
+        <Architecture />
         <Presentation />
         <HowToUse />
         <ApiDocumentation />
