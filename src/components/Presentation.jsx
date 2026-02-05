@@ -20,7 +20,7 @@ const Presentation = () => {
       title: 'AI 模型架構',
       type: 'image',
       description: 'Nebula 整合多家頂尖 AI 模型，提供最佳協作體驗',
-      image: '/images/generated_e8836998.png',
+      image: 'images/generated_e8836998.png',
       content: [
         { label: '核心定位', text: 'AI 作業系統而非單一模型，讓不同 AI 協同工作' },
         { label: 'Anthropic Claude', text: '主要推理引擎 (Sonnet/Opus) - 複雜任務、程式碼、協調' },
@@ -33,7 +33,7 @@ const Presentation = () => {
       title: 'AI 代理人系統',
       type: 'image',
       description: '專業化分工的 AI 代理人網路，支援協作與自訂配置',
-      image: '/images/generated_e8836998.png',
+      image: 'images/generated_e8836998.png',
       highlights: [
         '每個代理人專精特定領域',
         '代理人之間可互相委派任務',
@@ -45,7 +45,7 @@ const Presentation = () => {
       title: '整體架構',
       type: 'image',
       description: 'Nebula 採用分層架構設計，從介面到整合層層協作',
-      image: '/images/generated_dbf4a808.jpeg',
+      image: 'images/generated_dbf4a808.jpeg',
       highlights: [
         '🖥️ 前端介面層：Web UI、Telegram、Slack、API',
         '🤖 AI 編排層：LLM 基礎、Function Calling',
@@ -58,7 +58,7 @@ const Presentation = () => {
       title: '自動化能力',
       type: 'image',
       description: '從觸發到執行的完整自動化工作流程',
-      image: '/images/generated_ce721c75.jpeg',
+      image: 'images/generated_ce721c75.jpeg',
       highlights: [
         '⏰ 多種觸發方式：Cron 排程、即時事件',
         '📋 任務配方：可重用的工作流模板',
@@ -71,7 +71,7 @@ const Presentation = () => {
       title: '記憶與學習系統',
       type: 'image',
       description: '多層次記憶系統支援智能學習與優化',
-      image: '/images/generated_6f824024.png',
+      image: 'images/generated_6f824024.png',
       highlights: [
         '💬 對話記憶：跨會話上下文追蹤',
         '🗄️ 應用記憶：資源 ID 映射快取',
@@ -84,7 +84,7 @@ const Presentation = () => {
       title: '代理人協作流程',
       type: 'image',
       description: '從使用者請求到結果回報的完整協作流程',
-      image: '/images/generated_50cc3923.png',
+      image: 'images/generated_50cc3923.png',
       highlights: [
         '🎯 智能路由：自動分析請求意圖',
         '👨‍💻 專業分工：開發、測試、專業任務',
